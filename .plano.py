@@ -21,18 +21,19 @@ from plano import *
 from plano.github import *
 
 @command
-def build(no_cache=False):
+def build(no_cache=False, platform=None):
     """
     Build the images
     """
 
     no_cache_arg = "--no-cache" if no_cache else ""
+    platform_arg = f"--platform {platform}" if platform else ""
 
     with working_dir("frontend"):
-        run(f"./plano build {no_cache_arg}")
+        run(f"./plano build {no_cache_arg} {platform_arg}")
 
     with working_dir("backend"):
-        run(f"./plano build {no_cache_arg}")
+        run(f"./plano build {no_cache_arg} {platform_arg}")
 
 @command
 def test():
