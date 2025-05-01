@@ -29,10 +29,10 @@ def build(no_cache=False):
     no_cache_arg = "--no-cache" if no_cache else ""
 
     with working_dir("frontend"):
-        run(f"plano build {no_cache_arg}")
+        run(f"./plano build {no_cache_arg}")
 
     with working_dir("backend"):
-        run(f"plano build {no_cache_arg}")
+        run(f"./plano build {no_cache_arg}")
 
 @command
 def test():
