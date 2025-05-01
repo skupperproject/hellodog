@@ -72,7 +72,7 @@ def test():
             result = http_get(f"http://localhost:{backend_port}/api/health")
 
 @command
-def run():
+def run_():
     """
     Run the images
     """
